@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src=" https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Website</title>
+
+<style>
+    body{
+       background-color: #131313;
+    }
+    /* Style the header background and padding */
+.navbar {
+    background-color: #000000; /* Change this to your desired background color */
+    padding: 10px;
+    margin-bottom: -15px;
+    
+}
+
+/* Style the navbar brand */
+.navbar-brand h1 {
+    color: rgb(0, 0, 0); /* Change the text color to your preference */
+    font-size: 24px; /* Adjust the font size as needed */
+    margin: 0;
+   
+}
+
+/* Style the icons in the navbar */
+.navbar-nav .nav-link {
+    color: white; /* Change the icon color to your preference */
+    font-size: 24px; /* Adjust the font size as needed */
+    margin-right: 15px; /* Add some spacing between icons */
+}
+
+/* Style the search bar */
+.input-group {
+    width: 300px; /* Adjust the width as needed */
+    margin: 0 auto;
+}
+
+/* Style the language selector icon */
+.dropdown-toggle {
+    color: white; /* Change the icon color to your preference */
+    font-size: 24px; /* Adjust the font size as needed */
+}
+
+/* Style the dropdown menu items */
+.dropdown-item {
+    font-size: 18px; /* Adjust the font size as needed */
+}
+
+
+
+/* Style the customer profile image */
+.navbar-nav .nav-link:last-child img {
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+}
+/* Increase the width and height of the icons in the sidebar */
+.sidebar .icon {
+            width: 40px; /* Adjust the width as needed */
+            height: 40px; /* Adjust the height as needed */
+            margin-right: 10px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 90px;
+            height: 700px;
+            background-color: #131313;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #ffffff;
+            padding: 8px 16px;
+            text-decoration: none;
+            width: 32%;
+            margin-left: 15px;
+        }
+         /* Container for the section */
+         .section {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin-left: 50px;
+            height: 40vh;
+            margin-bottom: -50px;
+            
+        }
+        
+ 
+        /* Left Column */
+        .section .left-column {
+            flex: 1;
+            background-color: #f1f1f1;
+            padding: 1px;
+            border-radius: 40px 40px 40px 40px;
+            margin-right: 40%;
+            height: 250px;
+            margin-left: 20px;
+
+           
+            
+            
+        }
+
+        /* Middle Column */
+        .section  .middle-column {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 1px;
+            text-align: center;
+            border-radius: 40px 40px 40px 40px;
+            margin-left: -38%;
+            height: 250px;
+            margin-right: 20%;
+
+           
+        }
+
+        /* Right Column */
+        .section  .right-column {
+            flex: 1;
+            background-color: #e0d5e2;
+            padding: 1px;
+            border-radius: 40px 40px 40px 40px;
+            margin-left: -18%;
+            height: 250px;
+            
+        }
+
+        /* Styling for the h1 and h3s in the left column */
+        .section .left-column h1 {
+            font-size: 23px;
+           margin-left: 40px;
+           margin-top: 5px;
+            text-align: left;
+           
+            
+           
+        }
+
+        .section .left-column h3 {
+            background-color: #3498db;
+            padding: 10px;
+            margin: 10px 0;
+            margin-left: 55px;
+            border-radius: 10px 10px 10px 10px;
+            width: 75%;
+            height: 40px;
+            font-size: 18px;
+            
+        
+        }
+
+
+        /* Styling for the image and text container in the middle column */
+        .section  .middle-column img {
+         width: 300px;
+            height: 100px;
+            
+           
+        }
+
+        .section .middle-column .image-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin-top: -20px;
+            margin-left: 40px;
+            
+        
+        }
+        .section .middle-column .column-container h1{
+            font-size: 23px;
+           margin-left: 40px;
+           margin-top: 5px;
+            text-align: left;
+
+        }
+        .section .middle-column .column-container p{
+            font-size: 16px;
+            
+           margin-top: 20px;
+           text-align: center;
+           margin-bottom: -1px;
+
+
+        }
+        .section .middle-column .column-container h2{
+            font-size: 40px;
+            
+           text-align: center;
+       
+           
+
+        }
+        .right-column .column-container h1{
+            font-size: 23px;
+           margin-left: 40px;
+           margin-top: 5px;
+            text-align: left;
+           margin-bottom: 10px;
+
+        }
+
+        /* Styling for the table in the right column */
+        .right-column table {
+            width: 90%;
+            margin-left: 25px;
+          
+            
+        }
+
+        .right-column th, .right-column td {
+            padding: 5px;
+            border: 1px solid #ffffff;
+            text-align: center;
+            border: 1px solid transparent;
+        
+        }
+
+        .right-column th {
+            font-weight: bold;
+            text-align: left;
+            border: 1px solid transparent;
+          
+        }
+         /* Styling for the "order" section */
+         .order-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin-left: 40px;
+        }
+
+        /* Styling for each column container */
+        .order-section .column {
+            flex: 1;
+            background-color: #4e4c4c;
+            border-radius: 40px 40px 40px 40px; 
+            padding: 20px;
+            margin: 10px;
+            width: 20px;
+            height: 110px;
+            margin-bottom: -30px;
+        }
+
+        /* Styling for h1, p1, h2, and p2 within each column */
+        .order-section .column h1 {
+            text-align: left;
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: -1px;
+            margin-left: 15px;
+            margin-top: -6px;
+        }
+        .order-section .column h2 {
+            text-align: left;
+            font-size: 18px;
+            margin-bottom: -1px;
+            color: #fff;
+            margin-left: 15px;
+            margin-top: -5px;
+        }
+        .order-section  .column p {
+            font-size: 12px;
+            color: #c0c0c0;
+            margin-left: 15px;
+
+        }
+
+        /* Styling for the button at the bottom of each container */
+        .order-section .column button {
+            display: block;
+            background-color: #4ccd0f;
+            color: #000000;
+            border: none;
+            border-radius: 40px 40px 40px 40px; 
+            padding:5px 10px;
+            margin-top: -50px;
+            margin-left: auto;
+            cursor: pointer;
+
+           
+        }
+        .graphs-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin-left: 50px;
+        }
+
+        /* Styling for each column container */
+        .graphs-section .column {
+            flex: 1;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 20px 20px 20px 20px; 
+           height:200px ;
+           
+        }
+
+        /* Styling for h1 in each column */
+        .column h1 {
+            text-align: left;
+            font-size: 24px;
+        }
+
+        /* Styling for the canvas element for the charts */
+        canvas {
+            width: 70%;
+            height: 10%;
+        }
+        .vertical-navbar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            background-color: #131313;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 10px;
+            padding-bottom: 20px;
+        
+            
+        }
+
+        /* Styling for the icons in the vertical navbar */
+        .vertical-navbar i {
+            color: #ffffff;
+            font-size: 24px;
+            margin: 10px 0;
+            
+        }
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        /* Adjust the width and margin of the vertical navbar */
+        .vertical-navbar {
+            width: 60px;
+            margin-top: 80px;
+        }
+
+        /* Add a class to style the main content sections */
+        .content-section {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Add a class to style the main content section headings */
+        .section-heading {
+            font-size: 24px;
+            margin-top: 0;
+        }
+      /* Styling for the "Overview Section" */
+.overview-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Left Column */
+.left-column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+  /* CSS for the Overview Section */
+  .overview-section {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 100px;
+            color:rgb(193, 193, 193);
+         margin-bottom: -30px;
+        }
+
+        .overview-section .left-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .overview-section .left-column .container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            
+        }
+
+        .overview-section .left-column .column {
+            flex: 1;
+           margin-left: -40px;
+          
+            width: 150px;
+            text-align: center;
+        }
+
+        .overview-section .left-column .column button {
+         
+            font-size: 16px;
+            background-color:#131313;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+      
+        }
+
+        .overview-section  .right-column {
+            display: flex;
+            align-items: center;
+            margin-right: 30px;
+            margin-top: -20px;
+          
+        }
+
+        .calendar-selector {
+            margin-right: 20px;
+           
+
+
+        }
+
+        .add-page-icon {
+            font-size: 40px;
+            cursor: pointer;
+            margin-bottom: 10px;
+
+        }
+
+        /* CSS for Calendar Selector */
+        .calendar {
+            display: inline-block;
+            width: 200px;
+            height: 30px;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+    
+     
+/* Media query for screens with a maximum width of 425px */
+@media screen and (max-width: 425px) {
+    .navbar {
+        padding: 5px; /* Adjust padding for smaller screens */
+        margin-right:-400px ;
+        margin-top: 10px;
+        margin-left: 80px;
+        
+    }
+
+    .navbar-brand h1 {
+        font-size: 30px; /* Reduce font size for smaller screens */
+        margin-left: 10px;
+        margin-top: 10px
+
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 18px;
+        margin-right: 10px;
+        margin-top: 100px;
+    }
+
+    .input-group {
+       display : none
+       
+    }
+
+    .dropdown-toggle {
+       display: none;
+     
+    }
+
+
+    .rounded-circle,
+    .navbar-nav .nav-link:last-child img {
+      display: none;
+       
+    }
+   
+    .section {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        margin-left: 0;
+        height: auto; /* Remove fixed height */
+    }
+
+    /* Reset column styles */
+    .section .left-column,
+    .section .middle-column,
+    .section .right-column {
+        flex: 1;
+        margin: 10px;
+        width: 170%; /* Occupy full width */
+        border-radius: 10px 10px 10px 10px;
+        margin-left: 100px;
+    }
+
+    /* Reset text alignment for h1 and h3 in left column */
+    .section .left-column h1{
+        font-size: 35px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .section .left-column h3 {
+        text-align: center;
+      margin-left: 80px;
+      height: 60px;
+      font-size: 25px;
+
+
+    }
+
+    /* Reset image styles in middle column */
+    .section .middle-column img {
+       display: none;
+    }
+
+    /* Reset styles for the image and text container in the middle column */
+    .section .middle-column .image-container{
+        display: none;
+    }
+    .section .middle-column .column-container h1{
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+    .section .middle-column .column-container p{
+        margin-top: 20px;
+        font-size: 30px;
+        margin-bottom: 10px;
+
+    }
+    .section .middle-column .column-container h2 {
+     margin-bottom: 20px;
+        text-align: center;
+        font-size: 50px;
+
+    }
+
+    /* Reset styles for the table in the right column */
+    .section .right-column table {
+        width: 100%;
+        margin-left: 10px;
+        margin-bottom: 20px;
+
+    }
+    .right-column th, .right-column td,
+    .right-column th  {
+        font-size: 20px;
+
+    }
+    .right-column .column-container h1{
+        font-size: 30px;
+        text-align: center;
+    }
+    /* Reset column styles */
+   
+    .order-section {
+        display: block;
+        padding: 20px;
+        margin-left: 150px;
+        margin-top: 30px;
+        margin-right: -30%;
+    }
+
+    /* Reset column styles */
+    .order-section .column {
+        width: 150%; /* Occupy full width */
+        margin: 0 0 20px; /* Add spacing between columns */
+        height: 150px;
+    }
+    .order-section .column h1 {
+        font-size: 25px;
+    }
+    .order-section .column h2 {
+        font-size: 22px;
+    }
+    .order-section  .column p {
+        font-size: 18px;
+    }
+
+    /* Reset margin for the button at the bottom of each container */
+    .order-section .column button {
+        margin-top: -100px; /* Add some space between buttons */
+        margin-left: 300px; /* Adjust left margin */
+        padding:20px 50px;
+        font-size: 25px;
+        font-weight: 700;
+       
+    }
+
+    .graphs-section {
+        display: block;
+        padding: 20px;
+        margin-left: 40px; /* Remove left margin */
+        margin-right: -40px;
+    }
+
+    /* Reset column styles */
+    .graphs-section .column {
+        width: 185%; /* Occupy full width */
+        height: 100%;
+        margin: 0 0 20px; /* Add spacing between columns */
+    }
+
+    /* Reset width and margin for the canvas element */
+    .graphs-section canvas {
+        width: 100%; /* Occupy full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+    /* Adjust the width and margin of the vertical navbar */
+    .vertical-navbar {
+        width: auto;
+        margin-top: 0;
+    }
+    .overview-section {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 40px;
+            color:rgb(193, 193, 193);
+         margin-bottom: -30px;
+        }
+        
+        .vertical-navbar {
+            
+            width: 60px;
+            background-color: #131313;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 150px;
+            padding-bottom: -10px;
+        
+            
+        }
+
+        /* Styling for the icons in the vertical navbar */
+        .vertical-navbar i {
+            color: #ffffff;
+            font-size: 24px;
+            margin: 10px 0;
+            
+}
+
+}
+</style>
+
+ 
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-black">
+    <a class="navbar-brand" href="#">
+        <div class="d-flex align-items-center">
+            <img src="logo1.png" alt="Logo" width="50">
+            <h1 class="ml-2 mb-0" style="color: white;">Dashborad </h1>
+        </div>
+    </a>
+
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="glyphicon glyphicon-facetime-video"></i> <!-- Facetime video icon -->
+            </a>
+        </li>
+        <li class="nav-item">
+            <div class="input-group rounded" style="margin-left: -150%; margin-top: 10px;" >
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"  style=" background-color: #4e4c4c; border-color: #4e4c4c; border-radius: 30px 30px 30px 30px;"/>
+                <span class="input-group-text border-0" id="search-addon" style=" background-color: #4e4c4c; margin-left: 5px;" >
+                    <i class="fas fa-search" style="color: white"></i>
+                </span>
+            </div>
+        </li>
+        <li class="nav-item dropdown"  >
+            <a class="nav-link dropdown-toggle" href="#" id="Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="color: #c0c0c0; margin-top:10px;">
+                <i class="flag-united-kingdom flag m-0" ></i> <!-- Language selector icon -->
+            </a>
+            <div class="dropdown-menu" aria-labelledby="Dropdown" style="margin-left: -50px;">
+                <a class="dropdown-item" href="#"><i class="flag-united-kingdom flag"></i> English <i class="fa fa-check text-success ms-2"></i></a>
+                <div class="dropdown-divider" ></div>
+                <a class="dropdown-item" href="#"><i class="flag-poland flag"></i> Polski</a>
+                <a class="dropdown-item" href="#"><i class="flag-china flag"></i> 中文</a>
+                <a class="dropdown-item" href="#"><i class="flag-japan flag"></i> 日本語</a>
+                <a class="dropdown-item" href="#"><i class="flag-germany flag"></i> Deutsch</a>
+                <a class="dropdown-item" href="#"><i class="flag-france flag"></i> Français</a>
+                <a class="dropdown-item" href="#"><i class="flag-spain flag"></i> Español</a>
+                <a class="dropdown-item" href="#"><i class="flag-russia flag"></i> Русский</a>
+                <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i> Português</a>
+            </div>
+        </li>
+       
+        <li class="nav-item" >
+            <img src="lo2.jpeg" alt="Customer Profile" class="rounded-circle" width="60px" style="margin-top: 5px;"> <!-- Customer profile image -->
+        </li>
+    </ul>
+
+</nav>
+<hr style="background-color:#646464">
+<section class="overview-section">
+    <div class="left-column">
+        <div class="container">
+            <div class="column">
+                <button>Overview</button>
+            </div>
+            <div class="column">
+                <button  style="color: rgb(166, 166, 166) ;">PPC</button>
+            </div>
+            <div class="column">
+                <button style="color: rgb(166, 166, 166) ;">Year to year... </button>
+            </div>
+            <div class="column">
+                <button style="margin-left: 50px; color: rgb(166, 166, 166)">Customize</button>
+            </div>
+        </div>
+        
+    </div>
+    <div class="right-column">
+        <div class="calendar-selector">
+            <label for="calendar">Select a Date:</label>
+            <input type="date" id="calendar" class="calendar" onchange="handleDateChange()" style="border-radius: 20px 20px 20px 20px; background-color: rgb(62, 62, 62);border-color:rgb(62, 62, 62) ; color: rgb(191, 191, 191); ">
+        </div>
+        <div class="add-page-icon" onclick="addNewPage()">
+            <span>&#43;</span> <!-- Plus sign icon -->
+        </div>
+    </div>
+</section>
+<div class="vertical-navbar">
+   
+    <i class="fas fa-trash" style="margin-top: 80px;color: #646464; "></i> <!-- Delete bin icon -->
+    <i class="fas fa-shopping-cart" style="margin-top: -200px; color: #646464;"></i> <!-- Cart icon -->
+    <i class="fas fa-glasses"  style="margin-top: -200px;color: #646464;"></i> <!-- Goggles icon -->
+    <i class="fas fa-file"style="margin-top: -200px;color: #646464;"></i> <!-- Files icon -->
+    
+    <div style="margin-bottom: 10px;"> <!-- Spacer to push user icon to the bottom -->
+        <i class="fas fa-user" style="color: #646464;" ></i> <!-- User icon -->
+    </div>
+    
+</div>
+
+
+<div class="section">
+    <!-- Left Column -->
+    
+    <div class="left-column" style="flex: 1;">
+        <div class="column-container">
+            <h1>Summary</h1>
+            <h3 style="background-color: #f9978d;">Overview</h3>
+            <h3 style="background-color: #54da8c;">Campaigns</h3>
+            <h3 style="background-color: #f0c379;">Ad Group</h3>
+            <h3 style="background-color: #cd89e8;">Keyword</h3>
+        </div>
+    </div>
+
+    <!-- Middle Column -->
+    <div class="middle-column" style="flex: 1;">
+        <div class="column-container">
+            <h1>Top 5 products by spend</h1>
+            <p>Total score</p>
+            <h2>2,985</h2>
+            <div class="image-container">
+                <img src="semi.png" alt="Image">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-column" style="flex: 1;">
+        <div class="column-container">
+            <h1>Highest ACoS campaigns</h1>
+            <table>
+                <tr>
+                    <td style="text-align: left;color: #858585;">Company</td>
+                    <td style="color: #858585;">Spend</td>
+                    <td style= "color: #858585;">sell</td>
+                    <td style="color: #858585;">ACoS</td>
+                </tr>
+                <tr>
+                    <th>BoBNYN3MT</th>
+                    <td>$690.2</td>
+                    <td>$30.25</td>
+                    <td style="color: red;">$149.25</td>
+                </tr>
+                <tr>
+                    <th>Campaign</th>
+                    <td>$690.2</td>
+                    <td>$30.25</td>
+                    <td style=" font-weight: 700;">$149.25</td>
+                </tr>
+                <tr>
+                    <th>Research</th>
+                    <td>$690.2</td>
+                    <td>$30.25</td>
+                    <td style=" font-weight: 700;">$149.25</td>
+                </tr>
+                <tr>
+                    <th>House Number</th>
+                    <td>$690.2</td>
+                    <td>$30.25</td>
+                    <td style=" font-weight: 700;">$149.25</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="order-section">
+    <!-- Column 1 -->
+    <div class="column">
+        <h1>Order Created</h1>
+        <p>Oct 14/21 | Nov 14/21</p>
+        <h2>$134,970</h2>
+        <p>$123</p>
+        <button>+12.95%</button>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="column">
+        <h1>Total Sales</h1>
+        <p>Oct 14/21 | Nov 14/21</p>
+        <h2>$134,970</h2>
+        <p>$123</p>
+        <button>+12.95%</button>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="column">
+        <h1>PPC Sales</h1>
+        <p>Oct 14/21 | Nov 14/21</p>
+        <h2>$134,970</h2>
+        <p>$123</p>
+        <button>+12.95%</button>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="column">
+        <h1>Units Sales</h1>
+        <p>Oct 14/21 | Nov 14/21</p>
+        <h2>$134,970</h2>
+        <p>$123</p>
+        <button>+12.95%</button>
+    </div>
+
+    <!-- Column 5 -->
+    <div class="column">
+        <h1>Organic Sales</h1>
+        <p>Oct 14/21 | Nov 14/21</p>
+        <h2>$134,970</h2>
+        <p>$123</p>
+        <button>+12.95%</button>
+    </div>
+</div>
+
+<div class="graphs-section">
+    <!-- Left Column with Line Chart -->
+    <div class="column">
+        <h1>Costs</h1>
+        <canvas id="lineChart" style="max-height: 80%;"></canvas>
+    </div>
+
+    <!-- Right Column with Bar Chart -->
+    <div class="column">
+        <h1>ACoS vs TACoS</h1>
+        <canvas id="barChart" style="max-height: 80%;"></canvas>
+    </div>
+</div>
+
+<script>
+ 
+     // Line Chart Data
+  // Line Chart Data
+  const xValuesLine = [50, 60, 70, 80, 90, 100];
+        const yValuesLine = [7, 8, 8, 9, 7.6, 9];
+
+        new Chart("lineChart", {
+            type: "line",
+            data: {
+                labels: xValuesLine,
+                datasets: [{
+                    backgroundColor: "rgba(0, 0, 255, 1.0)",
+                    borderColor: "rgba(0, 0, 255, 0.1)",
+                    data: yValuesLine
+                }]
+            },
+            options: {}
+        });
+
+        // Bar Chart Data
+        var xValuesBar = ["Italy", "France", "Spain", "USA", "Argentina"];
+        var yValuesBar = [55, 49, 44, 24, 15];
+        var barColors = ["red", "green", "blue", "orange", "brown"];
+
+        new Chart("barChart", {
+            type: "bar",
+            data: {
+                labels: xValuesBar,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValuesBar
+                }]
+            },
+            options: {}
+        });
+
+        function handleDateChange() {
+            const selectedDate = document.getElementById('calendar').value;
+            alert(`Selected Date: ${selectedDate}`);
+        }
+
+        /* JavaScript for Adding New Pages */
+        function addNewPage() {
+            alert('New page added!');
+            // You can add code here to actually add a new page to your application.
+        }
+    </script>
+</body>
+</html>
